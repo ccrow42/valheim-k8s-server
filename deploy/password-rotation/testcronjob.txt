@@ -1,0 +1,7 @@
+kubectl delete job valheim-password-rotate-test -n valheim
+
+
+kubectl create job --from=cronjob/valheim-password-rotate valheim-password-rotate-test -n valheim
+
+
+kubectl logs job/valheim-password-rotate-test -n valheim
