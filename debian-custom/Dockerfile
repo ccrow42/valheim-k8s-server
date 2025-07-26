@@ -5,7 +5,6 @@ RUN apt-get update && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 COPY words.txt .
 COPY notify_discord.sh /usr/local/bin
-COPY update_youtube_channels.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/notify_discord.sh
 RUN curl -k -LO "https://dl.k8s.io/release/$(curl -k -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 RUN mv kubectl /usr/local/bin
